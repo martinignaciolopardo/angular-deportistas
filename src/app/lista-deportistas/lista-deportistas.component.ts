@@ -8,28 +8,34 @@ import { Deportista } from './Deportista';
 })
 export class ListaDeportistasComponent implements OnInit {
 
-  deportistas: Deportista[] = 
+  deportistas: Deportista[] =
     [
       {
         deporte: 'Futbol',
-        nombre: 'Diego Armando Maradona',
-        trofeo: 20,
-        informacion: 'Descripcion de Maradona',
-        foto: 'assets/images/maradona.jpeg'
+        nombre: 'Diego A. Maradona',
+        camiseta: 20,
+        informacion: 'sarasdar',
+        foto: 'assets/images/maradona.jpeg',
+        favorito: false,
+        cantidad: 0
       },
       {
         deporte: 'asdasd',
         nombre: 'ftjgfgj',
-        trofeo: 0,
+        camiseta: 0,
         informacion: 'sfdghdfg',
-        foto: 'assets/images/maradona.jpeg'
-      }, 
+        foto: 'assets/images/maradona.jpeg',
+        favorito: false,
+        cantidad: 0
+      },
       {
         deporte: 'ppppp',
         nombre: 'ppppp',
-        trofeo: 15,
+        camiseta: 15,
         informacion: 'ppppp',
-        foto: 'assets/images/maradona.jpeg'
+        foto: 'assets/images/maradona.jpeg',
+        favorito: false,
+        cantidad: 0
       }
     ];
 
@@ -38,5 +44,16 @@ export class ListaDeportistasComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  masCamisetas(deportista: Deportista): void{
+    if (deportista.cantidad < deportista.camiseta){
+      deportista.cantidad++;
+    }
+  }
+
+  menosCamisetas(deportista: Deportista): void{
+    if (deportista.cantidad > 0) {
+      deportista.cantidad--;
+    }
+  }
+
 }
- 

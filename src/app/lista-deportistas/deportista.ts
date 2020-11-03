@@ -1,7 +1,9 @@
 export interface Deportista {
     deporte: string
     nombre: string;
-    trofeo: number;
+    camiseta: number;
     informacion: string;
     foto: string;
+    favorito: boolean;
+    cantidad: number;
 }

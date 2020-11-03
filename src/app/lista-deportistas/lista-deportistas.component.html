@@ -4,22 +4,24 @@
         <tr>
             <th>Deporte</th>
             <th>Deportista</th>
-            <th>Trofeos</th>
+            <th>Camiseta</th>
             <th>Informacion</th>
             <th>Foto</th>
-            <th>Eliminar</th>
-            <th>Editar</th>
+            <th>Comprar camiseta</th>
         </tr>
     </thead>
     <tbody id="tabla">
         <tr *ngFor="let deportista of deportistas">
             <td>{{deportista.deporte }}</td>
-            <td>{{deportista.nombre | uppercase}}</td> 
-            <td><span *ngIf="deportista.trofeo==0">No tiene: </span>{{deportista.trofeo}}</td>
+            <td>{{deportista.nombre | uppercase}}</td>
+            <td><span *ngIf="deportista.camiseta==0">No tiene: </span>{{deportista.camiseta}}</td>
             <td>{{deportista.informacion}}</td>
-            <td><img [src]="deportista.foto" [alt]="deportista.nombre"></td>
-            <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
-            <td><button type="button" class="btn btn-outline-warning">Editar</button></td>
+            <td><img width="150" [src]="deportista.foto" [alt]="deportista.nombre"></td>
+            <td>
+                <button type="button" class="btn btn-sm btn-outline-danger" (click)="masCamisetas(deportista)">+</button>
+                <input type="number" min="0" max="{{deportista.camiseta}}" [(ngModel)]="deportista.cantidad" class="form-control" id="ex1">
+                <button type="button" class="btn btn-sm btn-outline-warning" (click)="menosCamisetas(deportista)">-</button>
+            </td>
         </tr>
     </tbody>
 </table>
