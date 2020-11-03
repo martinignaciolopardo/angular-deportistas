@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Deportista } from './Deportista';
 
 @Component({
   selector: 'app-lista-deportistas',
@@ -7,14 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaDeportistasComponent implements OnInit {
 
-  deportista = {
-    "deporte":"Futbol",
-    "nombre": "Diego Armando Maradona",
-    "club": ["Argentinos Junior","Boca Juniors","Seleccion Argentina"],
-    "informacion": "Descripcion Maradona",
-    "foto": "assets/images/maradona.jpeg"
-
-  }
+  deportistas: Deportista[] = 
+    [
+      {
+        deporte: 'Futbol',
+        nombre: 'Diego Armando Maradona',
+        trofeo: 20,
+        informacion: 'Descripcion de Maradona',
+        foto: 'assets/images/maradona.jpeg'
+      },
+      {
+        deporte: 'asdasd',
+        nombre: 'ftjgfgj',
+        trofeo: 0,
+        informacion: 'sfdghdfg',
+        foto: 'assets/images/maradona.jpeg'
+      }, 
+      {
+        deporte: 'ppppp',
+        nombre: 'ppppp',
+        trofeo: 15,
+        informacion: 'ppppp',
+        foto: 'assets/images/maradona.jpeg'
+      }
+    ];
 
   constructor() { }
 
@@ -22,3 +39,4 @@ export class ListaDeportistasComponent implements OnInit {
   }
 
 }
+ 

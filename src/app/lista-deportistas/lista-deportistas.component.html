@@ -4,7 +4,7 @@
         <tr>
             <th>Deporte</th>
             <th>Deportista</th>
-            <th>Clubes mas importantes</th>
+            <th>Trofeos</th>
             <th>Informacion</th>
             <th>Foto</th>
             <th>Eliminar</th>
@@ -12,88 +12,14 @@
         </tr>
     </thead>
     <tbody id="tabla">
-        <tr>
-            <td>{{deportista.deporte}}</td>
-            <td>{{deportista.nombre}}</td>
-            <td>
-                <ul>
-                    <li>{{deportista.club[0]}}</li>
-                    <li>{{deportista.club[1]}}</li>
-                    <li>{{deportista.club[2]}}</li>
-                </ul>
-            </td>
+        <tr *ngFor="let deportista of deportistas">
+            <td>{{deportista.deporte }}</td>
+            <td>{{deportista.nombre | uppercase}}</td> 
+            <td><span *ngIf="deportista.trofeo==0">No tiene: </span>{{deportista.trofeo}}</td>
             <td>{{deportista.informacion}}</td>
             <td><img [src]="deportista.foto" [alt]="deportista.nombre"></td>
-        </tr>
-        <tr>
-            <td>Automovilismo</td>
-            <td>Juan Manuel Fangio</td>
-            <td>
-                <ul>
-                    <li>Alfa Romeo</li>
-                    <li>Mercedes</li>
-                    <li>Ferrari</li>
-                </ul>
-            </td>
-            <td>Descripcion Fangio</td>
-        </tr>
-        <tr>
-            <td>Basquet</td>
-            <td>Manuel Ginobili</td>
-            <td>
-                <ul>
-                    <li>Clubes argentinos</li>
-                    <li>ligas italianas</li>
-                    <li>NBA</li>
-                </ul>
-            </td>
-            <td>Descripcion Ginobili</td>
-        </tr>
-        <tr>
-            <td>Hockey sobre cesped</td>
-            <td>Luciana Paula Aimar</td>
-            <td>  
-                <ul>
-                    <li>Quilmes</li>
-                    <li>GEBA</li>
-                    <li>Seleccion Argentina (Las Leonas)</li>
-                </ul>
-            </td>
-            <td>Descripcion Aimar</td>
-        </tr>
-        <tr>
-            <td>Rugby</td>
-            <td>Juan Martin Hernandez</td>
-            <td>
-                <ul>
-                    <li>Equipos de Francia</li>
-                    <li>Equipos de Europa</li>
-                    <li>Seleccion Argentina (jaguares)</li>
-                </ul>
-            </td>
-            <td>Descripcion Hernandez</td>
-        </tr>
-        <tr>
-            <td>Tenis</td>
-            <td>Juan Martin del Potro</td>
-            <td>
-                <ul>
-                    <li>Club Independiente de Tandil</li>
-                </ul>
-            </td>
-            <td>Descripcion Del Potro</td>
-        </tr>
-        <tr>
-            <td>Voley</td>
-            <td>Hugo Nestor Conte</td>
-            <td>
-                <ul>
-                    <li> Ferro Carril Oeste</li>
-                    <li>Rojas Scholem</li>
-                    <li>Swiss Medical Club</li>
-                </ul>
-            </td>
-            <td>Descripcion Conte</td>
+            <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
+            <td><button type="button" class="btn btn-outline-warning">Editar</button></td>
         </tr>
     </tbody>
 </table>
