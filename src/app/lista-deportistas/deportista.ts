@@ -1,5 +1,5 @@
 export interface Deportista {
-    deporte: string
+    deporte: string;
     nombre: string;
     camiseta: number;
     informacion: string;

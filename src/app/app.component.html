@@ -1,30 +1,22 @@
 
 <nav class="navbar navbar-dark bg-dark">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <a class="navbar-brand" href="http://localhost:4200/">Home</a>
+    <a class="navbar-brand" [routerLink]="['/']">Home</a>
     </button>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <a class="navbar-brand" href="http://localhost:4200/">Info</a>
+    <a class="navbar-brand" [routerLink]="['/']">Info</a>
     </button>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <a class="navbar-brand" href="http://localhost:4200/">Deportes</a>
+    <a class="navbar-brand" [routerLink]="['/deportes']">Deportes</a>
     </button>
 </nav>
 
-
-<h1>{{title}}</h1>
+<h1 class="title text-center">{{title}}</h1>
 
 <div class="container">
-    <div class="row">
-      <div class="col-md">
-        <app-lista-deportistas></app-lista-deportistas>
-      </div>
-      <div class="col-md">
-        Modificar tabla {{title}}
-      </div>
-    </div>
+  <router-outlet></router-outlet>
 </div>
 
-<footer>
+<footer class="footer text-center">
   <h3>Proyecto Angular 2020 - Martin Lopardo</h3>
 </footer>
