@@ -9,15 +9,17 @@ import { DeportesComponent } from './deportes/deportes.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CarritoComponent } from './carrito/carrito.component';
+import { InputCamisetasComponent } from './input-camisetas/input-camisetas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaDeportistasComponent,
-      DeportesComponent,
-      HomeComponent,
-      CarritoComponent,
-      DeportesComponent
+    DeportesComponent,
+    HomeComponent,
+    CarritoComponent,
+    DeportesComponent,
+      InputCamisetasComponent
    ],
   imports: [
     BrowserModule,

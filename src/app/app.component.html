@@ -4,16 +4,15 @@
     <a class="navbar-brand" [routerLink]="['/']">Home</a>
     </button>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <a class="navbar-brand" [routerLink]="['/']">Info</a>
-    </button>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <a class="navbar-brand" [routerLink]="['/deportes']">Deportes</a>
     </button>
 </nav>
 
-<h1 class="title text-center">{{title}}</h1>
+<div class="m-30">
+  <h1 class="title text-center">{{title}}</h1>
+</div>
 
-<div class="container">
+<div class="container-xl">
   <router-outlet></router-outlet>
 </div>
 

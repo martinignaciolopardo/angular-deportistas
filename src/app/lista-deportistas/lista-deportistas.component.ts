@@ -1,3 +1,4 @@
+import { CarritoCamisetasService } from './../../Carrito-Camisetas.service';
 import { Component, OnInit } from '@angular/core';
 import { Deportista } from './Deportista';
 
@@ -12,48 +13,49 @@ export class ListaDeportistasComponent implements OnInit {
     [
       {
         deporte: 'Futbol',
-        nombre: 'Diego A. Maradona',
-        camiseta: 20,
-        informacion: 'sarasdar',
+        nombre: 'Diego A. Maradona (10)',
+        camiseta: 6,
+        informacion: 'Autografiada',
         foto: 'assets/images/maradona.jpeg',
         favorito: false,
         cantidad: 0
       },
       {
-        deporte: 'asdasd',
-        nombre: 'ftjgfgj',
-        camiseta: 0,
-        informacion: 'sfdghdfg',
-        foto: 'assets/images/maradona.jpeg',
+        deporte: 'Hockey',
+        nombre: 'Aymar (8)',
+        camiseta: 9,
+        informacion: 'Autografiada',
+        foto: 'assets/images/aymar.jpeg',
         favorito: false,
         cantidad: 0
       },
       {
-        deporte: 'ppppp',
-        nombre: 'ppppp',
-        camiseta: 15,
-        informacion: 'ppppp',
-        foto: 'assets/images/maradona.jpeg',
+        deporte: 'Rugby',
+        nombre: 'Creevy (16)',
+        camiseta: 8,
+        informacion: 'Autografiada',
+        foto: 'assets/images/creevy.jpeg',
         favorito: false,
         cantidad: 0
       }
     ];
 
-  constructor() { }
+  constructor(private carrito: CarritoCamisetasService) {
+
+  }
 
   ngOnInit(): void {
   }
 
-  masCamisetas(deportista: Deportista): void{
-    if (deportista.cantidad < deportista.camiseta){
-      deportista.cantidad++;
-    }
+  agregarAlCarrito(deportista): void {
+    this.carrito.agregarAlCarrito(deportista);
+    deportista.camiseta -= deportista.cantidad;
+    deportista.cantidad = 0;
   }
 
-  menosCamisetas(deportista: Deportista): void{
-    if (deportista.cantidad > 0) {
-      deportista.cantidad--;
-    }
+  // tslint:disable-next-line: typedef
+  maximoReached(m: string) {
+    alert(m);
   }
 
 }

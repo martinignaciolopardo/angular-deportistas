@@ -1,6 +1,6 @@
-<table class="table">
+<table class="table table-dark table-hover">
     <thead>
-        <tr>
+        <tr class="text-center">
             <th>Deporte</th>
             <th>Deportista</th>
             <th>Camiseta</th>
@@ -9,17 +9,16 @@
             <th>Comprar camiseta</th>
         </tr>
     </thead>
-    <tbody id="tabla">
+    <tbody id="tabla" class="text-center">
         <tr *ngFor="let deportista of deportistas">
             <td>{{deportista.deporte }}</td>
             <td>{{deportista.nombre | uppercase}}</td>
-            <td><span *ngIf="deportista.camiseta==0">No tiene: </span>{{deportista.camiseta}}</td>
+            <td><span *ngIf="deportista.camiseta==0" class="progress-bar progress-bar-striped bg-danger">No hay</span><span *ngIf="deportista.camiseta!=0" class="progress-bar progress-bar-striped bg-succes">{{deportista.camiseta}}</span></td>
             <td>{{deportista.informacion}}</td>
-            <td><img width="150" [src]="deportista.foto" [alt]="deportista.nombre"></td>
+            <td><img width="150" height="90" [src]="deportista.foto" [alt]="deportista.nombre"></td>
             <td>
-                <button type="button" class="btn btn-sm btn-outline-danger" (click)="masCamisetas(deportista)">+</button>
-                <input type="number" min="0" max="{{deportista.camiseta}}" [(ngModel)]="deportista.cantidad" class="form-control" id="ex1">
-                <button type="button" class="btn btn-sm btn-outline-warning" (click)="menosCamisetas(deportista)">-</button>
+                <app-input-camisetas [(cantidad)]="deportista.cantidad" [max]="deportista.camiseta" (maximoReached)="maximoReached($event)" *ngIf="deportista.camiseta"></app-input-camisetas>
+                <button (click)="agregarAlCarrito(deportista)">Donar</button>
             </td>
         </tr>
     </tbody>
