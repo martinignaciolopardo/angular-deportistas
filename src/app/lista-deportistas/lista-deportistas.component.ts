@@ -1,4 +1,4 @@
-import { CarritoCamisetasService } from './../../Carrito-Camisetas.service';
+import { CarritoCamisetasService } from '../Carrito-Camisetas.service';
 import { Component, OnInit } from '@angular/core';
 import { Deportista } from './Deportista';
 
