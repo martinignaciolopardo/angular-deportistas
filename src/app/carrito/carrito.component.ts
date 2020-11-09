@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, observable } from 'rxjs';
-import { CarritoCamisetasService } from 'src/app/Carrito-Camisetas.service';
+import { CarritoCamisetasService } from '../Carrito-Camisetas.service';
 import { Deportista } from '../lista-deportistas/Deportista';
 
 @Component({
