@@ -1,15 +1,15 @@
 <h1 class="titulo">Carrito de compras</h1>
 <table class="table table-dark table-hover">
   <thead>
-      <tr class="text-center">
-          <th>Camiseta de</th>
-          <th>Cantidad</th>
-      </tr>
-  </thead>
-  <tbody id="tabla" class="text-center">
-      <tr *ngFor="let deportista of listaDeCompras$ | async ">
-          <td>{{deportista.nombre}}</td>
-          <td>{{deportista.cantidad}}</td>
-      </tr>
+        <tr class="text-center">
+            <th>Camiseta de</th>
+            <th>Cantidad</th>
+        </tr>
+    </thead>
+    <tbody id="tabla" class="text-center">
+        <tr *ngFor="let deportista of listaDeCompras$ | async">
+            <td *ngIf="deportista.cantidad!=0">{{deportista.nombre}}</td>
+            <td *ngIf="deportista.cantidad!=0">{{deportista.cantidad}}</td>
+        </tr>
   </tbody>
 </table>

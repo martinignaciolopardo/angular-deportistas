@@ -19,7 +19,7 @@ import { InputCamisetasComponent } from './input-camisetas/input-camisetas.compo
     HomeComponent,
     CarritoComponent,
     DeportesComponent,
-      InputCamisetasComponent
+    InputCamisetasComponent
    ],
   imports: [
     BrowserModule,
