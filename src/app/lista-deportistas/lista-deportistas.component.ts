@@ -13,7 +13,7 @@ export class ListaDeportistasComponent implements OnInit {
     [
       {
         deporte: 'Futbol',
-        nombre: 'Diego A. Maradona (10)',
+        nombre: 'Maradona (10)',
         camiseta: 6,
         informacion: 'Autografiada',
         foto: 'assets/images/maradona.jpeg',

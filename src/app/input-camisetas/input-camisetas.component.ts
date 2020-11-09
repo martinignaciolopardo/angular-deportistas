@@ -25,7 +25,7 @@ export class InputCamisetasComponent implements OnInit {
       this.cantidadChange.emit(this.cantidad);
     }
     else {
-      this.maximoReached.emit('se alcanzo el maximo');
+      this.maximoReached.emit('Se alcanzo el limite de camisetas');
     }
   }
 

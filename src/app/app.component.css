@@ -1,3 +1,6 @@
-.m-30 {
-    margin-top: 30 !important;
-  }
+.titulos{
+    font-size: 2rem !important;
+    margin-top: 50px !important; 
+    margin-bottom: 50px !important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}

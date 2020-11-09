@@ -18,7 +18,7 @@
             <td><img width="150" height="90" [src]="deportista.foto" [alt]="deportista.nombre"></td>
             <td>
                 <app-input-camisetas [(cantidad)]="deportista.cantidad" [max]="deportista.camiseta" (maximoReached)="maximoReached($event)" *ngIf="deportista.camiseta"></app-input-camisetas>
-                <button (click)="agregarAlCarrito(deportista)">Donar</button>
+                <button (click)="agregarAlCarrito(deportista)">Comprar</button>
             </td>
         </tr>
     </tbody>
