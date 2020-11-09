@@ -15,7 +15,7 @@
             <td>{{deportista.nombre | uppercase}}</td>
             <td><span *ngIf="deportista.camiseta==0" class="progress-bar progress-bar-striped bg-danger">No hay</span><span *ngIf="deportista.camiseta!=0" class="progress-bar progress-bar-striped bg-succes">{{deportista.camiseta}}</span></td>
             <td>{{deportista.informacion}}</td>
-            <td><img width="150" height="90" [src]="https://raw.githubusercontent.com/martinignaciolopardo/angular-deportistas/master/src/assets/images/deportista.foto" [alt]="deportista.nombre"></td>
+            <td><img width="150" height="90" [src]="deportista.foto" [alt]="deportista.nombre"></td>
             <td>
                 <app-input-camisetas [(cantidad)]="deportista.cantidad" [max]="deportista.camiseta" (maximoReached)="maximoReached($event)" *ngIf="deportista.camiseta"></app-input-camisetas>
                 <button (click)="agregarAlCarrito(deportista)">Comprar</button>
